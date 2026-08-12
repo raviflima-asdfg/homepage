@@ -3,13 +3,458 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Projeto</title>
-</head>
-<body>
-    <h1>Meu Projeto da Disciplina</h1>
 
-    <p>Aluno: SEU NOME</p>
-    <p>Disciplina: Administração de Sistemas Proprietários</p>
-    <p>Tema: HTTP</p>
+    <title>Barbie World 💖</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #fff0f7;
+            color: #4a1230;
+        }
+
+        /* CABEÇALHO */
+        header {
+            min-height: 100vh;
+            background:
+                linear-gradient(rgba(255, 20, 147, 0.55), rgba(255, 105, 180, 0.75)),
+                url("https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=1600&q=80");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav {
+            width: 90%;
+            max-width: 1200px;
+            margin: 25px auto;
+            padding: 18px 30px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.4);
+            border-radius: 50px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: bold;
+            color: white;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffd6ec;
+        }
+
+        .hero {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .hero-content {
+            color: white;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: clamp(55px, 10vw, 110px);
+            font-family: Georgia, serif;
+            font-style: italic;
+            text-shadow: 4px 4px 15px #b0005a;
+        }
+
+        .hero p {
+            font-size: 22px;
+            margin: 20px 0 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: white;
+            color: #e60073;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.08);
+            background: #ffe1f0;
+        }
+
+        /* SEÇÕES */
+        section {
+            padding: 80px 8%;
+        }
+
+        .titulo {
+            text-align: center;
+            color: #e60073;
+            font-family: Georgia, serif;
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .subtitulo {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #7b3157;
+        }
+
+        /* SOBRE */
+        .sobre {
+            background: white;
+        }
+
+        .sobre-container {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .sobre img {
+            width: 100%;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(230, 0, 115, 0.2);
+        }
+
+        .sobre-texto h3 {
+            color: #e60073;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .sobre-texto p {
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        /* CARDS */
+        .mundo {
+            background: #ffe5f2;
+        }
+
+        .cards {
+            max-width: 1200px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(200, 0, 100, 0.12);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 35px rgba(200, 0, 100, 0.2);
+        }
+
+        .card .icone {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: #e60073;
+            margin-bottom: 12px;
+            font-size: 24px;
+        }
+
+        .card p {
+            line-height: 1.6;
+            color: #63334d;
+        }
+
+        /* FRASE */
+        .frase {
+            background: linear-gradient(135deg, #e60073, #ff69b4);
+            color: white;
+            text-align: center;
+        }
+
+        .frase h2 {
+            font-family: Georgia, serif;
+            font-size: 40px;
+            font-style: italic;
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .frase p {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        /* RODAPÉ */
+        footer {
+            background: #3b0926;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        footer strong {
+            color: #ff69b4;
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 800px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+                border-radius: 25px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .sobre-container {
+                grid-template-columns: 1fr;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .titulo {
+                font-size: 35px;
+            }
+
+            .frase h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- MENU -->
+    <header id="inicio">
+
+        <nav>
+            <div class="logo">BARBIE 💗</div>
+
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#mundo">Universo</a></li>
+            </ul>
+        </nav>
+
+        <!-- HERO -->
+        <div class="hero">
+            <div class="hero-content">
+
+                <h1>Barbie</h1>
+
+                <p>
+                    Bem-vindo ao mundo cor-de-rosa,
+                    onde você pode ser tudo o que quiser. ✨
+                </p>
+
+                <a href="#sobre" class="btn">
+                    Entrar no mundo 💖
+                </a>
+
+            </div>
+        </div>
+
+    </header>
+
+    <!-- SOBRE -->
+    <section class="sobre" id="sobre">
+
+        <h2 class="titulo">Bem-vindo ao Barbie World</h2>
+
+        <p class="subtitulo">
+            Um universo cheio de sonhos, estilo e possibilidades.
+        </p>
+
+        <div class="sobre-container">
+
+            <img
+                src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=900&q=80"
+                alt="Mundo cor de rosa"
+            >
+
+            <div class="sobre-texto">
+
+                <h3>Você pode ser tudo! ✨</h3>
+
+                <p>
+                    Barbie representa diferentes possibilidades,
+                    profissões, estilos e personalidades. Ao longo dos
+                    anos, ela se tornou um símbolo de criatividade,
+                    imaginação e liberdade para sonhar.
+                </p>
+
+                <br>
+
+                <p>
+                    Este site foi criado para celebrar esse universo
+                    cor-de-rosa e toda a sua criatividade. 💕
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- UNIVERSO -->
+    <section class="mundo" id="mundo">
+
+        <h2 class="titulo">O Universo da Barbie</h2>
+
+        <p class="subtitulo">
+            Descubra alguns dos elementos que fazem parte desse mundo.
+        </p>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="icone">👗</div>
+
+                <h3>Moda</h3>
+
+                <p>
+                    Looks, acessórios e diferentes estilos
+                    fazem parte da história da Barbie.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icone">💼</div>
+
+                <h3>Profissões</h3>
+
+                <p>
+                    Médica, astronauta, professora, engenheira
+                    e muitas outras possibilidades.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icone">🏠</div>
+
+                <h3>Barbie Dreamhouse</h3>
+
+                <p>
+                    Uma casa dos sonhos cheia de personalidade,
+                    diversão e muito rosa.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icone">✨</div>
+
+                <h3>Sonhos</h3>
+
+                <p>
+                    A ideia de que podemos imaginar,
+                    criar e buscar nossos próprios sonhos.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icone">🎀</div>
+
+                <h3>Estilo</h3>
+
+                <p>
+                    Uma identidade visual marcante,
+                    divertida e cheia de personalidade.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icone">💗</div>
+
+                <h3>Amizade</h3>
+
+                <p>
+                    Histórias e personagens que mostram
+                    a importância da amizade e companheirismo.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FRASE -->
+    <section class="frase">
+
+        <h2>
+            "Acredite em você e descubra que pode ser tudo aquilo que sonhar."
+        </h2>
+
+        <p>
+            💕 Dream big. Be yourself. Be Barbie.
+        </p>
+
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+
+        <p>
+            Feito com 💗 para o <strong>Barbie World</strong>
+        </p>
+
+        <p>
+            © 2026 - Projeto pessoal
+        </p>
+
+    </footer>
+
 </body>
 </html>
